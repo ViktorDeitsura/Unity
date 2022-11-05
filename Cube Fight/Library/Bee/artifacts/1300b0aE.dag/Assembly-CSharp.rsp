@@ -363,6 +363,9 @@
 "Assets/Scenes/Scripts/GameLogic.cs"
 "Assets/Scenes/Scripts/Load.cs"
 "Assets/Scenes/Scripts/MainMenu.cs"
+"Assets/Scenes/Scripts/playerBot/CollisionDamage.cs"
+"Assets/Scenes/Scripts/playerBot/PBStats.cs"
+"Assets/Scenes/Scripts/playerBot/PBStatsBar.cs"
 "Assets/TutorialInfo/Scripts/Readme.cs"
 -langversion:9.0
 
