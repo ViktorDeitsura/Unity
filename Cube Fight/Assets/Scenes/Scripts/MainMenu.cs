@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 
     public void Start(int index)
     {
+        Load.sceneNum = 2;
         SceneManager.LoadScene(index);
     }
 
@@ -20,4 +21,5 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
 }
