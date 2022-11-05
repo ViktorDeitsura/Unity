@@ -12,7 +12,7 @@ public class PBStats : MonoBehaviour
 
     void Start()
     {
-        enemyKills = 10;
+        enemyKills = 0;
         maxHealth = 100;
         health = maxHealth;
         speed = 1;
