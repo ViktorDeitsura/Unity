@@ -45,8 +45,4 @@ public class PBSpawner : MonoBehaviour
         Invoke( "spawn", delay );
     }
 
-    public void RegisterPlayerBot()
-    {
-
-    }
 }

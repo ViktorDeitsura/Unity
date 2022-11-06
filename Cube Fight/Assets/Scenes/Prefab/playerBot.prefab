@@ -610,7 +610,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionDamage: 10
-  collisionTag: 
 --- !u!114 &2105170554466606916
 MonoBehaviour:
   m_ObjectHideFlags: 0

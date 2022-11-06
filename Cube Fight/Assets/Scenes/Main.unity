@@ -845,6 +845,16 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4469712892515960186, guid: d1433ca2628f37048a0d5045e470dd7f,
+        type: 3}
+      propertyPath: m_Speed
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469712892515960186, guid: d1433ca2628f37048a0d5045e470dd7f,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 4544481405521061397, guid: d1433ca2628f37048a0d5045e470dd7f,
         type: 3}
       propertyPath: target

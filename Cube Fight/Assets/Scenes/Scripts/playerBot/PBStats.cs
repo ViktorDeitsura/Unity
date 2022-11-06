@@ -13,20 +13,17 @@ public class PBStats : MonoBehaviour
     void Start()
     {
         enemyKills = 0;
-        maxHealth = 100;
+        maxHealth = Random.Range( 50, 250 );
         health = maxHealth;
-        speed = 1;
+        speed = Random.Range( 0, 7 );
     }
 
-    public void TakeHit(int damage)
+    void Update()
     {
-        bonusDamage = enemyKills * 5;
-        damage = damage + bonusDamage;
-        health -= damage;
-
         if ( health <= 0 ) {
             Destroy( gameObject );
         }
     }
+
 
 }

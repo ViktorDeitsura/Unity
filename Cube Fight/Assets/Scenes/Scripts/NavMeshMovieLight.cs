@@ -13,6 +13,7 @@ public class NavMeshMovieLight : MonoBehaviour
     void Start()
     {
         playerBot = GetComponent<NavMeshAgent>();
+        playerBot.speed = GetComponent<PBStats>().speed;
     }
 
 
@@ -25,7 +26,9 @@ public class NavMeshMovieLight : MonoBehaviour
     {
         if ( PBSpawner.playerBotArr.Length >= 4 ) {
             targetObj = NearPlayerBot();
-            playerBot.SetDestination( targetObj.transform.position );
+            if ( targetObj != null ) {
+                playerBot.SetDestination( targetObj.transform.position );
+            }
         }
     }
 
@@ -35,12 +38,15 @@ public class NavMeshMovieLight : MonoBehaviour
         Vector3 position = transform.position;
 
         foreach ( GameObject go in PBSpawner.playerBotArr ) {
-            float curDistance = Vector3.Distance( go.transform.position, position );
-            if ( curDistance < distance && curDistance > 1 ) {
-                foundObject = go;
-                distance = curDistance;
+            if ( go != null ) {
+                float curDistance = Vector3.Distance( go.transform.position, position );
+                if ( curDistance < distance && curDistance > 1 ) {
+                    foundObject = go;
+                    distance = curDistance;
+                }
             }
         }
         return foundObject;
+
     }
 }
