@@ -7,6 +7,8 @@ public class NavMeshMovieLight : MonoBehaviour
 {
     public GameObject target;
     NavMeshAgent playerBot;
+    private GameObject foundObject;
+    private GameObject targetObj;
 
     void Start()
     {
@@ -16,21 +18,29 @@ public class NavMeshMovieLight : MonoBehaviour
 
     void Update()
     {
-        SeekTarget();
+        MoveToTarget();
     }
 
-    private void SeekTarget()
+    private void MoveToTarget()
     {
-        bool trueTarget = false;
-        int arrNum = 0;
-        if ( PBSpawner.playerBotArr.Length >= 2 ) {
-            while ( !trueTarget ) {
-                if ( PBSpawner.playerBotArr[arrNum].transform.position != playerBot.transform.position ) {
-                    playerBot.SetDestination( PBSpawner.playerBotArr[arrNum].transform.position );
-                    trueTarget = true;
-                }
-                arrNum++;
+        if ( PBSpawner.playerBotArr.Length >= 4 ) {
+            targetObj = NearPlayerBot();
+            playerBot.SetDestination( targetObj.transform.position );
+        }
+    }
+
+    private GameObject NearPlayerBot()
+    {
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+
+        foreach ( GameObject go in PBSpawner.playerBotArr ) {
+            float curDistance = Vector3.Distance( go.transform.position, position );
+            if ( curDistance < distance && curDistance > 1 ) {
+                foundObject = go;
+                distance = curDistance;
             }
         }
+        return foundObject;
     }
 }

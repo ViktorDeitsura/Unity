@@ -9,6 +9,7 @@ public class PBSpawner : MonoBehaviour
     public int delay;
     public int playerBotLimit;
     public static GameObject[] playerBotArr;
+    public static int playerBotOnScreen = 0;
 
     private int rand;
     private int randPosition;
@@ -34,11 +35,12 @@ public class PBSpawner : MonoBehaviour
 
     private void spawn()
     {
-        if ( enemy.Length < playerBotLimit ) {
+        if ( playerBotOnScreen < playerBotLimit ) {
             rand = Random.Range( 0, enemy.Length );
             randPosition = Random.Range( 0, spawnPoint.Length );
             Instantiate( enemy[rand], spawnPoint[randPosition].transform.position, Quaternion.identity );
             playerBotArr = GameObject.FindGameObjectsWithTag("playerBot");
+            playerBotOnScreen++;
         }
         Invoke( "spawn", delay );
     }
