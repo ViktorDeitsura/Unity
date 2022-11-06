@@ -8,6 +8,7 @@ public class PBSpawner : MonoBehaviour
     public Transform[] spawnPoint;
     public int delay;
     public int playerBotLimit;
+    public static GameObject[] playerBotArr;
 
     private int rand;
     private int randPosition;
@@ -37,7 +38,13 @@ public class PBSpawner : MonoBehaviour
             rand = Random.Range( 0, enemy.Length );
             randPosition = Random.Range( 0, spawnPoint.Length );
             Instantiate( enemy[rand], spawnPoint[randPosition].transform.position, Quaternion.identity );
+            playerBotArr = GameObject.FindGameObjectsWithTag("playerBot");
         }
         Invoke( "spawn", delay );
+    }
+
+    public void RegisterPlayerBot()
+    {
+
     }
 }

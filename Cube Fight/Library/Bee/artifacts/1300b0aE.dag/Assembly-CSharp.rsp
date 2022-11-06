@@ -363,6 +363,7 @@
 "Assets/Scenes/Scripts/GameLogic.cs"
 "Assets/Scenes/Scripts/Load.cs"
 "Assets/Scenes/Scripts/MainMenu.cs"
+"Assets/Scenes/Scripts/NavMeshMovieLight.cs"
 "Assets/Scenes/Scripts/PBSpawner.cs"
 "Assets/Scenes/Scripts/playerBot/CollisionDamage.cs"
 "Assets/Scenes/Scripts/playerBot/PBStats.cs"
